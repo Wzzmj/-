@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <style>
+        /* 内外边距清零 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 斜体取消 */
+
+em,
+i {
+    font-style: normal;
+}
+
+/* 无圆点 */
+
+li {
+    list-style: none;
+}
+
+/* 无边框，底部不留白 */
+
+img {
+    cursor: pointer;
+    border: 0;
+    vertical-align: middle;
+}
+
+/* 无下划线 */
+
+a {
+    text-decoration: none;
+    color:rgb(70, 106, 121);
+    
+}
+a:hover{
+    color: #1296db;
+}
+/* 行内块 */
+
+div {
+    display: inline-block;
+}
+
+/* 鼠标小手 */
+
+h2,
+h4,
+p {
+    cursor: pointer;
+}
+
+/* 抗锯齿性，字体，背景白色，大小，字体黑色 */
+
+body {
+    -webkit-font-smoothing: antialiased;
+    background-color: rgb(255, 255, 255);
+    font: 14px/1.5 "PingFangSC-Regular", "helvetica neue", tahoma, "PingFang SC", "microsoft yahei", arial,
+        "hiragino sans gb", sans-serif;
+    color: rgb(0, 0, 0);
+}
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: block;
+}
+
+body .loginwhole {
+  background-image: url("/images/login.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body .loginwhole .login {
+  width: 340px;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 0 30px;
+  color: #606266;
+  font-size: 13px;
+}
+
+body .loginwhole .login .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: dimgrey;
+  line-height: 1.1;
+  margin-top: 20px;
+}
+
+body .loginwhole .login .title :hover {
+  color: #1296db;
+}
+
+body .loginwhole .login .title .loginTitle {
+  color: #1296db;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+body .loginwhole .login .title span {
+  display: block;
+  cursor: pointer;
+}
+
+body .loginwhole .login .input_login {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-top: 50px;
+  height: 40px;
+  cursor: default;
+}
+
+body .loginwhole .login .input_login #imguser_login,
+body .loginwhole .login .input_login #imgpassword_login {
+  display: inline-block;
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  z-index: 33;
+}
+
+body .loginwhole .login .input_login #imguser_login img,
+body .loginwhole .login .input_login #imgpassword_login img {
+  position: absolute;
+  margin: 10px 10px;
+  top: 3px;
+}
+
+body .loginwhole .login .input_login #eye_login {
+  display: inline-block;
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  z-index: 33;
+  left: 292px;
+  cursor: pointer;
+}
+
+body .loginwhole .login .input_login #eye_login img {
+  position: absolute;
+  margin: 10px 10px;
+  top: 3px;
+}
+
+body .loginwhole .login .input_login .offBorder {
+  position: absolute;
+  width: 87%;
+  height: 100%;
+  border: none;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+}
+
+body .loginwhole .login .input_login input {
+  padding-left: 35px;
+}
+
+body .loginwhole .login .input_login input:focus {
+  outline: 0;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0px 0px 10px 0px #5dc5f9;
+}
+
+body .loginwhole .login .remDiv {
+  width: auto;
+  height: 40px;
+  line-height: 66px;
+  position: relative;
+  margin-top: 20px;
+}
+
+body .loginwhole .login .remDiv label {
+  position: relative;
+  top: -2px;
+  cursor: pointer;
+}
+
+body .loginwhole .login .remDiv label #rem {
+  border-radius: 4px;
+  display: inline-block;
+  border: 1px solid #dcdfe6;
+  cursor: pointer;
+}
+
+body .loginwhole .login #fail_login {
+  width: 200px;
+  height: 30px;
+  position: relative;
+  color: red;
+  left: 132px;
+}
+
+body .loginwhole .login .btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body .loginwhole .login .btn .log {
+  width: 100%;
+  height: 50px;
+  background-color: #0075ff;
+  margin-top: 31px;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  z-index: 11;
+  cursor: pointer;
+}
+
+body .loginwhole .register {
+  width: 340px;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 0 30px;
+  color: #606266;
+  font-size: 13px;
+  display: none;
+}
+
+body .loginwhole .register .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: dimgrey;
+  line-height: 1.1;
+  margin-top: 20px;
+}
+
+body .loginwhole .register .title :hover {
+  color: #1296db;
+}
+
+body .loginwhole .register .title .registerTitle {
+  color: #1296db;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+body .loginwhole .register .title span {
+  display: block;
+  cursor: pointer;
+}
+
+body .loginwhole .register .input_register {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+  height: 40px;
+  cursor: default;
+}
+
+body .loginwhole .register .input_register #imguser_register,
+body .loginwhole .register .input_register #imgmail_register,
+body .loginwhole .register .input_register #imgpassword_register,
+body .loginwhole .register .input_register #imgsafe_register {
+  display: inline-block;
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  z-index: 33;
+}
+
+body .loginwhole .register .input_register #imguser_register img,
+body .loginwhole .register .input_register #imgmail_register img,
+body .loginwhole .register .input_register #imgpassword_register img,
+body .loginwhole .register .input_register #imgsafe_register img {
+  position: absolute;
+  margin: 10px 10px;
+  top: 3px;
+}
+
+body .loginwhole .register .input_register #usercode_register_check {
+  display: block;
+  position: absolute;
+  top: 45px;
+  width: 150px;
+  height: 20px;
+  color: red;
+  font-size: 12px;
+  display: none;
+}
+
+body .loginwhole .register .input_register #passwordcode_register_check {
+  display: block;
+  position: absolute;
+  top: 45px;
+  width: 150px;
+  height: 20px;
+  color: red;
+  font-size: 12px;
+  display: none;
+}
+
+body .loginwhole .register .input_register #mailcode_register_check {
+  display: block;
+  position: absolute;
+  top: 45px;
+  width: 150px;
+  height: 20px;
+  color: red;
+  font-size: 12px;
+  display: none;
+}
+
+body .loginwhole .register .input_register #eye_register {
+  display: inline-block;
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  z-index: 33;
+  left: 292px;
+  cursor: pointer;
+}
+
+body .loginwhole .register .input_register #eye_register img {
+  position: absolute;
+  margin: 10px 10px;
+  top: 3px;
+}
+
+body .loginwhole .register .input_register .offBorder {
+  position: absolute;
+  width: 87%;
+  height: 100%;
+  border: none;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+}
+
+body .loginwhole .register .input_register input {
+  padding-left: 35px;
+}
+
+body .loginwhole .register .input_register input:focus {
+  outline: 0;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0px 0px 10px 0px #5dc5f9;
+}
+
+body .loginwhole .register .safecode_half {
+  width: 50%;
+}
+
+body .loginwhole .register #sendcode_register {
+  width: 135px;
+  height: 40px;
+  position: absolute;
+  left: 200px;
+  background-color: #67b7e5;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+body .loginwhole .register #fail_sendcode {
+  display: block;
+  position: absolute;
+  left: 200px;
+  top: 40px;
+  width: 150px;
+  height: 20px;
+  color: red;
+}
+
+body .loginwhole .register .btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body .loginwhole .register .btn .reg {
+  width: 100%;
+  height: 50px;
+  background-color: #0075ff;
+  margin-top: 25px;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  z-index: 11;
+  cursor: pointer;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="loginwhole">
+        <div class="login">
+            <div class="title">
+                <span class="registerTitle" onclick="login_to_register()">登&nbsp;&nbsp;录</span>
+            </div>
+            <form action="/login" id="login_form" method="post">
+                <div class="input_login">
+                    <i id="imguser_login"><img src="/images/userName16.png" alt=""></i>
+                    <input type="text" autocomplete="off" placeholder="用户名" class="offBorder" id="usercode_login" name="username">
+                </div>
+                <div class="input_login">
+                    <i id="imgpassword_login"><img src="/images/密码.png" alt=""></i>
+                    <input type="password" autocomplete="off" placeholder="密码" class="offBorder" id="usepassword_login" name="password">
+                    <i id="eye_login" onclick="changeStatus_login()"><img src="/images/隐藏.png" alt=""
+                            id="eyeChange_login"></i>
+                </div>
+
+                <div class="remDiv">
+                    <input type="checkbox" name="remember" id="rem" checked>
+                    <label for="rem">记住密码</label>
+                </div>
+                <!-- 用户名密码错误是的提示部分 -->
+                <div id="fail_login"></div>
+                <div class="btn">
+                    <!-- <button type='button' class="reg">注册</button> -->
+                    <button type='submit' class="log" onclick="loginBtn()">登录</button>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+    <script>
+        var count = 0;
+        var usercode_login = document.getElementById('usercode_login')
+        var usepassword_login = document.getElementById('usepassword_login')
+        function loginBtn() {
+            //点击登录按钮，但是表单中有内容为空的时候，框框变红
+            function showUserRed() {
+                if (usercode_login.value == "") {
+                    usercode_login.style.borderColor = "red"
+                }
+                else {
+                    usercode_login.style.borderColor = "#e1e1e1"
+                }
+            }
+            function showPsRed() {
+                if (usepassword_login.value == "") {
+                    usepassword_login.style.borderColor = "red"
+                }
+                else {
+                    usepassword_login.style.borderColor = "#e1e1e1"
+                }
+            }
+            //恢复原来的颜色
+            function recoverColor() {
+                setTimeout(function () { usercode_login.style.borderColor = "#e1e1e1" }, 5000)
+                setTimeout(function () { usepassword_login.style.borderColor = "#e1e1e1" }, 5000)
+            }
+            showUserRed();
+            showPsRed();
+            recoverColor();
+
+        }
+        //改变密码显示与隐藏的功能
+        //获取一下眼睛eye_login
+        var eye_login = document.getElementById("eye_login")
+        var eyeChange_login = document.getElementById("eyeChange_login")
+        //获取一下密码框usepassword_login
+        var usepassword_login = document.getElementById("usepassword_login")
+        function changeStatus_login() {
+            if (usepassword_login.type == "password") {
+                usepassword_login.type = "text"
+                eyeChange_login.src = "/images/显示.png"
+
+            }
+            else {
+                usepassword_login.type = "password"
+                eyeChange_login.src = "/images/隐藏.png"
+            }
+        }
+        //标题登录和注册
+        //点击登录时：注册页面none，登录页面block
+        //点击注册时：登录页面none，注册页面block
+        //获取登录界面
+        var login = document.querySelector(".login")
+        //获取注册界面
+        var register = document.querySelector(".register")
+        function login_to_register() {
+            register.style.display = "block";
+            login.style.display = "none";
+        }
+        function register_to_login() {
+            login.style.display = "block";
+            register.style.display = "none";
+        }
+
+
+    </script>
+ 
+</body>
+
+</html>

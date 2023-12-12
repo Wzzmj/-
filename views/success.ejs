@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作结果</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    a{
+        text-decoration: none;
+        color:  rgb(184, 164, 164);
+        font-size: larger;
+    }
+    .container{
+        width: 600px;
+        height: 100px;
+        background-color: #bfc;
+        padding: 10px 50px;
+        margin: 0 auto;
+        color: rgb(207, 160, 160);
+    }
+    p{
+        display: block;
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="alert">
+            <h1>:) <%=msg %></h1>
+            <p><a href="<%=url %>">点击跳转</a></p>
+        </div>
+    </div>
+</body>
+</html>
